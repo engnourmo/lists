@@ -122,7 +122,7 @@ stackStatus pushStack(stack_t *myStack,void *ptr){
         ret = stackNullPointer;
     }
     else{
-        if(stackFull == StackFull(myStack)){
+        if(StackFull(myStack)){
             ret = stackFull;
         }
         else{
@@ -148,7 +148,7 @@ stackStatus popStack(stack_t *myStack,void **ptr){
         ret = stackNullPointer;
     }
     else{
-        if(stcakEmpty == StackEmpty(myStack)){
+        if(StackEmpty(myStack)){
             ret = stcakEmpty;
         }
         else{
@@ -175,7 +175,7 @@ stackStatus topStack(stack_t *myStack,void **ptr){
         ret = stackNullPointer;
     }
     else{
-        if(stcakEmpty == StackEmpty(myStack)){
+        if(StackEmpty(myStack)){
             ret = stcakEmpty;
         }
         else{
@@ -198,10 +198,10 @@ stackStatus stackCount(stack_t *myStack,uint_32 *size){
         ret = stackNullPointer;
     }
     else{
-        if(stackFull == StackFull(myStack)){
+        if(StackFull(myStack)){
             *size = myStack->elementMAxsize;
         }
-        else if(stcakEmpty == StackEmpty(myStack)){
+        else if(StackEmpty(myStack)){
             *size = 0;
         }
         else{
@@ -225,7 +225,7 @@ stackStatus displayStack(stack_t *myStack){
         ret = stackNullPointer;
     }
     else{
-        if(stcakEmpty == StackEmpty(myStack)){
+        if(StackEmpty(myStack)){
             printf("the stack is empty\n");
             ret = stack_ok;
         }
